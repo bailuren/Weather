@@ -26,6 +26,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.yp.weather.gson.Forecast;
 import com.example.yp.weather.gson.Weather;
+import com.example.yp.weather.service.AutoUpdateService;
 import com.example.yp.weather.util.HttpUtil;
 import com.example.yp.weather.util.Utility;
 
@@ -488,8 +489,13 @@ public class WeatherActivity extends AppCompatActivity {
         // 在showWeatherInfo()方法的最后加入启动AutoUpdateService这个服务的代码
         // 这样只要一旦选中了某个城市并成功更新天气之后,AutoUpdateService就会一直在后台运行
         // 并保证10分钟更新一次天气
-        //Intent intent = new Intent(this, AutoUpdateService.class);
-        //startService(intent);
+        if(weather != null && "ok".equals(weather.status)){
+            Intent intent = new Intent(this, AutoUpdateService.class);
+            startService(intent);
+        }else{
+            Toast.makeText(WeatherActivity.this,"获取天气信息失败",Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 }
