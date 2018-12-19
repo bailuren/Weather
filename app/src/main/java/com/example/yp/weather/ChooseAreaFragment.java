@@ -111,7 +111,7 @@ public class ChooseAreaFragment extends Fragment {
                 } else if (currentLevel == LEVEL_CITY) {
                     selectedCity = cityList.get(position);
                     queryCounties();
-                } /*else if (currentLevel == LEVEL_COUNTY) {
+                } else if (currentLevel == LEVEL_COUNTY) {
                     // 如果当前级别是LEVEL_COUNTY,就启动WeatherActivity,并把当前选中县的天气id传递过去
                     String weatherId = countyList.get(position).getWeatherId();
                     // 这里使用了java中的一个小技巧,instanceof关键字可以用来判断一个对象是否属于某个类的实例
@@ -122,14 +122,14 @@ public class ChooseAreaFragment extends Fragment {
                         intent.putExtra("weather_id", weatherId);
                         startActivity(intent);
                         getActivity().finish();
-                    } else if (getActivity() instanceof WeatherActivity) {
+                    } /*else if (getActivity() instanceof WeatherActivity) {
                         // 如果是在WeatherActivity中,那么就关闭滑动菜单,显示下拉刷新进度条,然后请求新城市的天气信息
                         WeatherActivity activity = (WeatherActivity) getActivity();
                         activity.drawerLayout.closeDrawers();
                         activity.swipeRefresh.setRefreshing(true);
                         activity.requestWeather(weatherId);
-                    }
-                }*/
+                    }*/
+                }
             }
         });
         // 返回按钮的点击事件
