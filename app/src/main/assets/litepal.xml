@@ -32,9 +32,9 @@
     	</list>
     -->
     <list>
-        <mapping class = "com.example.yp.android.db.Province"/>
-        <mapping class = "com.example.yp.android.db.City"/>
-        <mapping class = "com.example.yp.android.db.County"/>
+        <mapping class = "com.example.yp.weather.db.Province"/>
+        <mapping class = "com.example.yp.weather.db.City"/>
+        <mapping class = "com.example.yp.weather.db.County"/>
     </list>
 
     <!--
